@@ -1,0 +1,37 @@
+<div class="album-details o-container">
+  <app-header title="Album details" class="o-flex-align--center">
+    <a [routerLink]="'/'"><app-back-button-icon></app-back-button-icon></a>
+  </app-header>
+  <div class="u-padding--left u-padding--right o-flex--vertical o-flex-align--center">
+    <div class="album-details__album-image">
+      <img class="u-full-width" [src]="album.thumbnail" [alt]="album.name">
+    </div>
+    <p class="t-color--purple-heart u-font u-font-bold">{{album.name}}</p>
+    <span class="u-font--sm">{{album.artist}}</span>
+  </div>
+  <div class="u-padding--left u-padding--right">
+    <h4>Tracks</h4>
+    <div class="album-details__table">
+      <table class="u-table--min-width u-full-width">
+        <thead class="t-color--primary">
+          <tr>
+            <th class="u-padding--sm">#</th>
+            <th class="u-padding--sm u-text-align--left">Name</th>
+            <th class="u-padding--sm u-text-align--center">Duration</th>
+            <th class="u-padding--sm u-text-align--center">Release</th>
+          </tr>
+        </thead>
+        <tbody class="t-color--secondary">
+          <tr *ngFor="let track of tracks; let i = index">
+            <td class="u-padding--sm">{{ i + 1 }}</td>
+            <td class="u-padding--sm">{{ track.name }}</td>
+            <td class="u-padding--sm u-text-align--center">{{ track.duration | minutesSeconds }}</td>
+            <td class="u-padding--sm u-text-align--center">
+              {{ track.releaseDay | date: 'y/MM/dd' }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+.album-details {
+  &__table {
+    border-collapse: collapse;
+    overflow-x: auto;
+  }
+
+  &__album-image {
+    border-radius: 50%;
+    height: 150px;
+    overflow: hidden;
+    width: 150px;
+  }
+}

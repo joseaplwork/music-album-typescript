@@ -1,0 +1,23 @@
+@import '../styles/settings';
+
+.music-albums-list {
+  font-size: 1rem;
+
+  &__container {
+    display: grid;
+    grid-gap: 2em;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
+  &__item {
+    border-radius: 10px;
+    box-shadow: 0 0 5px $gray-color;
+  }
+
+  &__img {
+    border-radius: 50%;
+    height: 4em;
+    overflow: hidden;
+    width: 4em;
+  }
+}
