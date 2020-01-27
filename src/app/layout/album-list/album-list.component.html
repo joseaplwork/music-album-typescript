@@ -1,20 +1,20 @@
 <div class="album-list o-container">
   <app-header title="Music albums"></app-header>
   <div class="album-list__container u-padding--left u-padding--right u-margin--top-md u-margin--bottom-md">
-    <div *ngFor="let musicAlbum of Albums | async" class="album-list__item u-padding--xs t-bg--white">
-      <a class="o-link--no-style o-flex-align--center" [routerLink]="['/detail', musicAlbum.id]">
+    <div *ngFor="let album of albums$ | async" class="album-list__item u-padding--xs t-bg--white">
+      <a class="o-link--no-style o-flex-align--center" [routerLink]="['/detail', album.id]">
         <div class="album-list__img u-margin--right">
-          <img class="o-full-width" [src]="musicAlbum.thumbnail" />
+          <img class="o-full-width" [src]="album.thumbnail" />
         </div>
         <div class="o-flex--vertical o-flex--1">
           <span class="t-color--primary">
-            {{ musicAlbum.name }}
+            {{ album.name }}
           </span>
           <span class="t-color--secondary u-font--sm">
-            {{ musicAlbum.artist }}
+            {{ album.artist }}
           </span>
           <span class="u-display--inline-block u-margin--top-sm u-font--xs t-color--purple-heart">
-            Tracks: {{ musicAlbum.tracks }}
+            Tracks: {{ album.tracks }}
           </span>
         </div>
       </a>

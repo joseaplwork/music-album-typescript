@@ -1,0 +1,4 @@
+export const actionTypes = {
+  FETCH_ALBUM_LIST_SUCCESS: '[Albums] FETCH_ALBUM_LIST_SUCCESS',
+  FETCH_ALBUM_LIST: '[Albums] FETCH_ALBUM_LIST'
+}

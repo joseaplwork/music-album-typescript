@@ -3,11 +3,11 @@
     <a [routerLink]="'/'"><app-back-button-icon></app-back-button-icon></a>
   </app-header>
   <div class="u-padding--left u-padding--right o-flex--vertical o-flex-align--center">
-    <div class="album-details__album-image">
-      <img class="u-full-width" [src]="album.thumbnail" [alt]="album.name">
+    <div *ngIf="(album$ | async)?.thumbnail" class="album-details__album-image">
+      <img class="u-full-width" [src]="(album$ | async)?.thumbnail" [alt]="(album$ | async)?.name">
     </div>
-    <p class="t-color--purple-heart u-font u-font-bold">{{album.name}}</p>
-    <span class="u-font--sm">{{album.artist}}</span>
+    <p class="t-color--purple-heart u-font u-font-bold u-text-align--center">{{(album$ | async)?.name}}</p>
+    <span class="u-font--sm">{{(album$ | async)?.artist}}</span>
   </div>
   <div class="u-padding--left u-padding--right">
     <h4>Tracks</h4>
@@ -22,7 +22,7 @@
           </tr>
         </thead>
         <tbody class="t-color--secondary">
-          <tr *ngFor="let track of tracks | async; let i = index">
+          <tr *ngFor="let track of tracks$ | async; let i = index">
             <td class="u-padding--sm">{{ i + 1 }}</td>
             <td class="u-padding--sm">{{ track.name }}</td>
             <td class="u-padding--sm u-text-align--center">{{ track.duration | minutesSeconds }}</td>

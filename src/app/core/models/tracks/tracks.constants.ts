@@ -1,0 +1,4 @@
+export const actionTypes = {
+  FETCH_TRACK_LIST_SUCCESS: '[Tracks] FETCH_TRACK_LIST_SUCCESS',
+  FETCH_TRACK_LIST: '[Tracks] FETCH_TRACK_LIST'
+}

@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { AlbumDetailsService } from '../../core/services/album-details/album-details.service';
-import { Track } from '../../core/models/tracks.model';
-import { Album } from '../../core/models/album.model';
+import { Track } from 'src/app/core/models/tracks/tracks.models';
+import { TracksReducer } from 'src/app/core/models/tracks/tracks.models';
+import { selectTracks, selectAlbum } from 'src/app/core/models/tracks/tracks.selector';
+import { Album } from 'src/app/core/models/albums/albums.models';
+import { fetchTrackList } from 'src/app/core/models/tracks/tracks.actions';
 
 @Component({
   selector: 'app-album-details',
@@ -11,18 +14,20 @@ import { Album } from '../../core/models/album.model';
   styleUrls: ['./album-details.component.scss']
 })
 export class AlbumDetailsComponent implements OnInit {
-  album: Album;
-  tracks: Observable<Track[]>;
+  album$: Observable<Album>;
+  tracks$: Observable<Track[]>;
 
   constructor(
-    private albumDetails: AlbumDetailsService,
+    private store: Store<TracksReducer>,
     private route: ActivatedRoute,
-  ) { }
+  ) {
+    this.tracks$ = store.pipe(select(selectTracks));
+    this.album$ = store.pipe(select(selectAlbum));
+  }
 
   ngOnInit() {
     const albumId = this.route.snapshot.paramMap.get('id');
 
-    this.tracks = this.albumDetails.fetchAlbumDetails(albumId);
-    this.album = this.albumDetails.getAlbum();
+    this.store.dispatch(fetchTrackList({ id: parseInt(albumId, 10) }));
   }
 }
