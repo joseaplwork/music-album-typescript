@@ -1,10 +1,17 @@
-export interface Song {
+export interface Track {
   id: number;
   name: string;
   duration: number;
   releaseDay: string;
-  // "trackId":1440855221,
-  // "trackName":"All At Once",
-  // "trackTimeMillis":217716,
-  // "releaseDate":"2008-02-02T12:00:00Z",
+}
+
+export interface TracksResponse {
+  resultCount: number;
+  results: Array<{
+    wrapperType: string;
+    trackId: number;
+    trackName: string;
+    trackTimeMillis: number;
+    releaseDate: string;
+  }>
 }

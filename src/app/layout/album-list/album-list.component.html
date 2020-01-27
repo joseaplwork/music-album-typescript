@@ -1,9 +1,9 @@
-<div class="music-albums-list o-container">
+<div class="album-list o-container">
   <app-header title="Music albums"></app-header>
-  <div class="music-albums-list__container u-padding--left u-padding--right u-margin--top-md u-margin--bottom-md">
-    <div *ngFor="let musicAlbum of musicAlbums" class="music-albums-list__item u-padding--xs t-bg--white">
+  <div class="album-list__container u-padding--left u-padding--right u-margin--top-md u-margin--bottom-md">
+    <div *ngFor="let musicAlbum of Albums | async" class="album-list__item u-padding--xs t-bg--white">
       <a class="o-link--no-style o-flex-align--center" [routerLink]="['/detail', musicAlbum.id]">
-        <div class="music-albums-list__img u-margin--right">
+        <div class="album-list__img u-margin--right">
           <img class="o-full-width" [src]="musicAlbum.thumbnail" />
         </div>
         <div class="o-flex--vertical o-flex--1">

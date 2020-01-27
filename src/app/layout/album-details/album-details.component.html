@@ -22,7 +22,7 @@
           </tr>
         </thead>
         <tbody class="t-color--secondary">
-          <tr *ngFor="let track of tracks; let i = index">
+          <tr *ngFor="let track of tracks | async; let i = index">
             <td class="u-padding--sm">{{ i + 1 }}</td>
             <td class="u-padding--sm">{{ track.name }}</td>
             <td class="u-padding--sm u-text-align--center">{{ track.duration | minutesSeconds }}</td>

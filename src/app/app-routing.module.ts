@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MusicAlbumsListComponent } from './music-albums-list/music-albums-list.component';
-import { AlbumDetailsComponent } from './album-details/album-details.component';
+import { AlbumListComponent } from './layout/album-list/album-list.component';
+import { AlbumDetailsComponent } from './layout/album-details/album-details.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: MusicAlbumsListComponent,
+    component: AlbumListComponent,
   },
   {
     path: 'detail/:id',

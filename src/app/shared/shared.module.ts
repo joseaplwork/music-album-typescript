@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { BackButtonIconComponent } from './layout/back-button-icon/back-button-icon.component';
-import { HeaderComponent } from './layout/header/header.component';
-import { MinutesSecondsPipe } from './pipes/minutes-seconds/minutes-seconds.pipe';
+import { BackButtonIconComponent } from './components/back-button-icon/back-button-icon.component';
+import { HeaderComponent } from './components/header/header.component';
+import { MinutesSecondsPipe } from './pipes/minutes-seconds.pipe';
 
 @NgModule({
   declarations: [
