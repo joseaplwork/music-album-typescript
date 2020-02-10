@@ -17,16 +17,3 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Implementation decisions
-_ Added very basic implementation of the challengue using `NGRX`
-_ ITCSS + SCSS for styles
-_ One way data biding with observables
-
-## Missing Implementation
-_ Error handling
-_ Server request loaders
-_ Store requested data in memory to prevent multiple server calls
-_ Unit tests
-_ I was looking the SOLID principle but couldn't apply it to angular, because of the DI from angular (which references classes instead of interfaces) in general I could have followed more strictly the pattern but it was my first app in angular and couldn't relate concepts properly
-_ e2e tests

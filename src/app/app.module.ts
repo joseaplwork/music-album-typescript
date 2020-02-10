@@ -36,4 +36,5 @@ import { AlbumsEffects } from './core/models/albums/albums.effects';
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
